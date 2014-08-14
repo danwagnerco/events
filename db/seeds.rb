@@ -134,5 +134,17 @@ User.create!([
       :email                 => "nicole@example.com",
       :password              => "secret",
       :password_confirmation => "secret"
+    },
+    {
+      :name                  => "Dan",
+      :email                 => "dan@example.com",
+      :password              => "secret",
+      :password_confirmation => "secret"
+    },
+    {
+      :name                  => "Kelly",
+      :email                 => "kelly@example.com",
+      :password              => "secret",
+      :password_confirmation => "secret"
     }
   ])
