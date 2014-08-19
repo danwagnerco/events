@@ -5,12 +5,12 @@
 <ol id="registrations">
   <% @registrations.each do |r| %>
     <li>
-      <%= mail_to(r.email, r.name) %>
+      <%= link_to r.user.name, r.user %>
       <span class="date">
         <%= time_ago_in_words(r.created_at) %> ago
       </span>
       <span class="how-heard">
-        (<%= r.how_heard %>)    
+        (<%= r.how_heard %>)
       </span>
     </li>
   <% end %>
