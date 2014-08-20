@@ -7,12 +7,13 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
+    @event  = Event.find(params[:id])
+    @likers = @event.likers
   end
   
   def edit
     @event = Event.find(params[:id])
-  end
+  end 
   
   def update
     @event = Event.find(params[:id])

@@ -8,6 +8,19 @@
   <p>
     <%= @event.description %>
   </p>
+  <p>
+    <%= pluralize(@likers.size, "like") %>
+  </p>
+  <% if @likers.any? %>
+    <h3>Likers</h3>
+    <ul>
+      <% @likers.each do |user| %>
+        <li>
+          <%= link_to user.name, user %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
   
   <h3>Price</h3>
   <p>
