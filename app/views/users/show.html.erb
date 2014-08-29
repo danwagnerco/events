@@ -1,18 +1,11 @@
+<% content_for(:title, @user.name) %>
+
 <article id="user">
   <header>
     <h1><%= @user.name %></h1>
     <h2><%= @user.email %></h2>
   </header>
-  <% if @liked_events.any? %>
-    <h3>Liked Events</h3>
-    <ul>
-      <% @liked_events.each do |event| %>
-        <li>
-          <%= link_to event.name, event %>
-        </li>
-      <% end %>
-    </ul>
-  <% end %>
+
   <h3>Registered For</h3>
   <ul>
     <% @registrations.each do |registration| %>
@@ -32,3 +25,16 @@
     </nav>
   </footer>
 </article>
+
+<% content_for(:side) do %>
+  <% if @liked_events.any? %>
+    <h3>Liked Events</h3>
+    <ul>
+      <% @liked_events.each do |event| %>
+        <li>
+          <%= link_to event.name, event %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+<% end %>
